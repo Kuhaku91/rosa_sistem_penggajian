@@ -33,7 +33,8 @@ CREATE TABLE `data_jabatan` (
   `gaji_pokok` varchar(50) NOT NULL,
   `tj_transport` varchar(50) NOT NULL,
   `uang_makan` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+); 
+-- ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data untuk tabel `data_jabatan`
@@ -61,7 +62,8 @@ CREATE TABLE `data_kehadiran` (
   `hadir` int NOT NULL,
   `sakit` int NOT NULL,
   `alpha` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+); 
+-- ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data untuk tabel `data_kehadiran`
@@ -89,7 +91,8 @@ CREATE TABLE `data_pegawai` (
   `status` varchar(50) NOT NULL,
   `photo` varchar(100) NOT NULL,
   `hak_akses` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+); 
+-- ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data untuk tabel `data_pegawai`
@@ -110,7 +113,8 @@ CREATE TABLE `hak_akses` (
   `id` int NOT NULL,
   `keterangan` varchar(50) NOT NULL,
   `hak_akses` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+); 
+-- ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data untuk tabel `hak_akses`
@@ -130,7 +134,8 @@ CREATE TABLE `potongan_gaji` (
   `id` int NOT NULL,
   `potongan` varchar(120) NOT NULL,
   `jml_potongan` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+); 
+-- ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data untuk tabel `potongan_gaji`
