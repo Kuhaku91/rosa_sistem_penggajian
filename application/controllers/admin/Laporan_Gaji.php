@@ -12,23 +12,24 @@ class Laporan_Gaji extends CI_Controller {
 				<span aria-hidden="true">&times;</span>
 				</button>
 				</div>');
-				redirect('login');
+			redirect('login');
 		}
 	}
 
 	public function index() 
 	{	
 		$data['title'] = "Laporan Gaji Pegawai";
+		$data['pegawai'] = $this->ModelPenggajian->get_data('data_pegawai')->result();
 
 		$this->load->view('template_admin/header',$data);
 		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/gaji/laporan_gaji');
+		$this->load->view('admin/gaji/laporan_gaji',$data);
 		$this->load->view('template_admin/footer');
 	}
 
 	public function cetak_laporan_gaji(){
 
-	$data['title'] = "Cetak Laporan Gaji Pegawai";
+		$data['title'] = "Cetak Laporan Gaji Pegawai";
 		if((isset($_GET['bulan']) && $_GET['bulan']!='') && (isset($_GET['tahun']) && $_GET['tahun']!='')){
 			$bulan = $_GET['bulan'];
 			$tahun = $_GET['tahun'];
@@ -48,6 +49,17 @@ class Laporan_Gaji extends CI_Controller {
 			ORDER BY data_pegawai.nama_pegawai ASC")->result();
 		$this->load->view('template_admin/header', $data);
 		$this->load->view('admin/gaji/cetak_gaji', $data);
+	}
+
+	public function cetak_gaji($id)
+	{
+		$data['title'] = "Laporan Gaji Pegawai";
+		$data['guru'] = $this->db->query("SELECT * FROM data_pegawai WHERE id_pegawai='$id'")->result();
+
+		$this->load->view('template_admin/header',$data);
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/gaji/list_gaji',$data);
+		$this->load->view('template_admin/footer');
 	}
 }
 

@@ -42,7 +42,8 @@ class Data_Jabatan extends CI_Controller {
 
 		if($this->form_validation->run() == FALSE) {
 			$this->tambah_data();
-		} else {
+		} 
+		else {
 			$nama_jabatan	= $this->input->post('nama_jabatan');
 			$gaji_pokok		= $this->input->post('gaji_pokok');
 			$tj_transport	= $this->input->post('tj_transport');
