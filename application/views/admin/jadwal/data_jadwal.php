@@ -7,15 +7,25 @@
 
 <div class="container-fluid">
   <div class="card shadow mb-4">
-    <div class="card-body">
+    <div class="card-body d-sm-flex align-items-center justify-content-between">
+
       <form class="form-inline">
+
         <div class="">
           <input type="date" name="tanggal" class="form-control" >
           <button type="submit" class="btn btn-success">
-            <i class="fas fa-plus"></i> LIHAT
+            <i class="fas fa-eye"></i> LIHAT
           </button>
         </div>
+
       </form>
+
+      <div>
+        <a href="<?= base_url() ?>admin/data_jadwal/add" class="btn btn-success">
+          <i class="fas fa-plus"></i> TAMBAH DATA
+        </a>
+      </div>
+
     </div>
   </div>
 </div>

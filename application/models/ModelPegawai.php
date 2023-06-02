@@ -32,4 +32,22 @@ Class ModelPegawai extends CI_Model
   {
     return $this->db->query('ALTER TABLE data_pegawai AUTO_INCREMENT=0');
   }
+  public function get_data_row_id($id){
+    $data = $this->db->get_where('data_pegawai',array('id_pegawai'=>$id))->row();
+    $data_mapel=array();
+    foreach ($data as $key => $value) {
+      // var_dump($key);
+      // var_dump($key);
+      // array_push($data_mapel,[
+      //   $key=>$value
+      // ]);
+      $data_mapel[]=array($key=>$value);
+    }
+    // var_dump($data_mapel);
+    return $data_mapel;
+  }
+  public function find($id)
+  {
+    return $this->db->get_where('data_pegawai',array('id_pegawai'=>$id))->row();
+  }
 }
