@@ -50,8 +50,8 @@
               <a class="collapse-item" href="<?php echo base_url('admin/set_tunjangan') ?>">Tunjangan Guru</a>
               <a class="collapse-item" href="<?php echo base_url('admin/data_absensi') ?>">Data Absensi</a>
               <a class="collapse-item" href="<?php echo base_url('admin/potongan_gaji') ?>">Setting Potongan Gaji</a>
+              <a class="collapse-item" href="<?php echo base_url('admin/presensi') ?>">Presensi Mengajar</a>
               <a class="collapse-item" href="<?php echo base_url('admin/data_penggajian') ?>">Data Gaji</a>
-              <a class="collapse-item" href="<?php echo base_url('admin/atur_jadwal') ?>">Atur Jadwal</a>
             </div>
           </div>
         </li>

@@ -33,7 +33,7 @@
           <td><img src="<?php echo base_url().'photo/'.$p->photo?>" width="50px"></td>
           <td>
             <center>
-              <a class="btn btn-sm btn-info" href="<?php echo base_url('admin/laporan_gaji/cetak_gaji/'.$p->id_pegawai) ?>"><i class="fas fa-print"></i></a>
+              <a class="btn btn-sm btn-info" href="<?php echo base_url('admin/laporan_gaji/cetak_gaji/'.$p->id_pegawai) ?>"><i class="fas fa-eye"></i></a>
             </center>
           </td>
         </tr>
