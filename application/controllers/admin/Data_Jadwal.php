@@ -11,6 +11,7 @@ class Data_Jadwal extends CI_Controller{
 		$this->load->model('ModelTunjangan_Guru');
 		$this->load->model('ModelTunjangan');
 		$this->load->model('ModelMapel');
+		$this->load->model('ModelGaji');
 
 		if($this->session->userdata('hak_akses') != '1'){
 			$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -98,7 +99,7 @@ class Data_Jadwal extends CI_Controller{
 			$cek_data = $this->ModelJadwal->cek_data($this->input->post('kelas'),$this->input->post('tanggal'),$this->input->post('jam'));
 			if ($cek_data) {
 				$this->session->set_flashdata('pesan_jadwal_add','<div class="alert alert-danger alert-dismissible fade show" role="alert">
-					<strong>Data jadwal sudah ada!</strong>
+					<strong>Data jadwal sudah ada yang mengisi!</strong>
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 					</button>
@@ -106,6 +107,17 @@ class Data_Jadwal extends CI_Controller{
 				redirect('admin/data_jadwal/add');
 			}	
 			else{
+				$cek_slip = $this->ModelGaji->cek_gaji($this->input->post('pegawai'),$this->input->post('tanggal'));
+				// var_dump($cek_slip);
+				if ($cek_slip) {
+					$this->session->set_flashdata('pesan_jadwal_add','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						<strong>Data jadwal tidak bisa dimasukkan karena dalam proses pengajuan atau sudah diacc untuk slip gaji!</strong>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+						</div>');
+					redirect('admin/data_jadwal/add');
+				}
 				$insert_data = [
 					'id_guru'=>$this->input->post('pegawai'),
 					'id_mapel'=>$this->input->post('mapel'),

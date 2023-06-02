@@ -30,7 +30,8 @@ CREATE TABLE `data_gaji` (
 
 insert  into `data_gaji`(`id_pegawai`,`cetak`,`status`) values 
 (1,'2023-05-01','diterima'),
-(1,'2023-06-01','pengajuan');
+(1,'2023-06-01','diterima'),
+(3,'2023-06-01','diterima');
 
 /*Table structure for table `data_gaji_tunjangan` */
 
@@ -100,7 +101,7 @@ CREATE TABLE `data_jadwal` (
   `tanggal` date DEFAULT NULL,
   `jam` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Data for the table `data_jadwal` */
 
@@ -115,7 +116,13 @@ insert  into `data_jadwal`(`id`,`id_guru`,`id_mapel`,`id_kelas`,`tanggal`,`jam`)
 (9,3,2,3,'2023-06-01',1),
 (10,2,1,2,'2023-06-01',9),
 (11,1,1,1,'2023-06-01',9),
-(12,2,2,2,'2023-06-01',5);
+(12,2,2,2,'2023-06-01',5),
+(13,4,2,3,'2023-05-31',5),
+(14,1,1,1,'2023-06-07',1),
+(15,1,1,1,'2023-06-02',1),
+(16,1,1,1,'2023-06-16',1),
+(17,1,1,1,'2023-06-02',2),
+(18,2,1,1,'2023-06-02',6);
 
 /*Table structure for table `data_kehadiran` */
 
@@ -190,14 +197,15 @@ CREATE TABLE `data_pegawai` (
   `photo` varchar(100) NOT NULL,
   `hak_akses` int NOT NULL,
   PRIMARY KEY (`id_pegawai`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Data for the table `data_pegawai` */
 
 insert  into `data_pegawai`(`id_pegawai`,`nik`,`nama_pegawai`,`username`,`password`,`jenis_kelamin`,`jabatan`,`tanggal_masuk`,`status`,`photo`,`hak_akses`) values 
 (1,'123456789','Fauzi','fauzi','0bd9897bf12294ce35fdc0e21065c8a7','Laki-Laki','Admin','2020-12-26','Karyawan Tetap','pegawai-210101-a7ca89f5fc.png',1),
 (2,'0987654321','Dodi','dodi','dc82a0e0107a31ba5d137a47ab09a26b','Laki-Laki','Staff Marketing','2021-01-02','Karyawan Tidak Tetap','pegawai-210101-9847084dc8.png',2),
-(3,'35720727080001','rosa','rosa','84109ae4b4178430b8174b1dfef9162b','Perempuan','Admin','2023-05-18','Karyawan Tetap','pegawai-230523-fc9c3741e8.jpg',1);
+(3,'35720727080001','rosa','rosa','84109ae4b4178430b8174b1dfef9162b','Perempuan','Admin','2023-05-18','Karyawan Tetap','pegawai-230523-fc9c3741e8.jpg',1),
+(4,'666','Kepsek','Kepsek','2cc02e17c69c6cb6b89917d26d54dfe7','Perempuan','HRD','2023-06-01','Karyawan Tetap','pegawai-230602-c34f545b98.jpeg',3);
 
 /*Table structure for table `data_presensi` */
 

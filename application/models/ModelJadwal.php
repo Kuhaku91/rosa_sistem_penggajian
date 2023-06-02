@@ -14,7 +14,7 @@ Class ModelJadwal extends CI_Model
       return true;
     }
     else{
-      var_dump('a');
+      // var_dump('a');
       return false;
     }
   }

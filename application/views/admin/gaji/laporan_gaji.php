@@ -15,7 +15,6 @@
             <th class="text-center">NIK</th>
             <th class="text-center">Nama Guru</th>
             <th class="text-center">Jenis Kelamin</th>
-            <th class="text-center">Jabatan</th>
             <th class="text-center">Status</th>
             <th class="text-center">Photo</th>
             <th class="text-center">Actions</th>
@@ -28,7 +27,6 @@
           <td class="text-center"><?php echo $p->nik ?></td>
           <td class="text-center"><?php echo $p->nama_pegawai ?></td>
           <td class="text-center"><?php echo $p->jenis_kelamin ?></td>
-          <td class="text-center"><?php echo $p->jabatan ?></td>
           <td class="text-center"><?php echo $p->status ?></td>
           <td><img src="<?php echo base_url().'photo/'.$p->photo?>" width="50px"></td>
           <td>
