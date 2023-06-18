@@ -12,26 +12,28 @@ class Dashboard extends CI_Controller {
 				<span aria-hidden="true">&times;</span>
 				</button>
 				</div>');
-				redirect('login');
+			redirect('login');
 		}
 	}
 	public function index() 
 	{
-		$pegawai = $this->db->query("SELECT * FROM data_pegawai");
-		$admin = $this->db->query("SELECT * FROM data_pegawai WHERE jabatan = 'Admin'");
-		$jabatan = $this->db->query("SELECT * FROM data_jabatan");
-		$kehadiran = $this->db->query("SELECT * FROM data_kehadiran");
-		
-		$data['title'] = "Dashboard";
-		$data['pegawai'] = $pegawai->num_rows();
-		$data['admin'] = $admin->num_rows();
-		$data['jabatan'] = $jabatan->num_rows();
-		$data['kehadiran'] = $kehadiran->num_rows();
+		$pegawai_admin = $this->db->query("SELECT * FROM data_pegawai WHERE hak_akses !='3' AND id_pegawai!='".$this->session->userdata('id_pegawai')."'");
 
-		$this->load->view('template_admin/header',$data);
-		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/dashboard', $data);
-		$this->load->view('template_admin/footer');
+		$data =[
+			'title' => "Dashboard",
+			'pegawai_admin' => $pegawai_admin->num_rows(),
+			'menu' => 'dashboard',
+			'sub_menu' => '',
+		];
+		// var_dump($data,$this->session->userdata('id_pegawai'));
+		$this->load->view('layouts/header',$data);
+		$this->load->view('layouts/admin/sidebar');
+		$this->load->view('layouts/wraper_up');
+
+		$this->load->view('admin/dashboard',$data);
+
+		$this->load->view('layouts/wraper_down');
+		$this->load->view('layouts/footer');
 	}
 }
 

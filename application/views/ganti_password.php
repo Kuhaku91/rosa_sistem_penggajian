@@ -1,31 +1,39 @@
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<section class="content-header">
+  <h1>
+    <?php echo $title?>
+  </h1>
+</section>
 
-  <!-- Page Heading -->
-  <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800"><?php echo $title?></h1>
+<section class="content">
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="box box-primary">
+        <form method="POST" action="<?php echo base_url('ganti_password/ganti_password_aksi')?>">
+          <div class="box-body">
+
+            <div class="form-grup">
+              <label>Password Baru</label>
+              <input type="password" name="passBaru" class="form-control">
+              <?php echo form_error('paasBaru', '<div class="text-small text-danger"> </div>')?>
+            </div>
+
+            <div class="form-grup">
+              <label>Ulangi Password Baru</label>
+              <input type="password" name="ulangPass" class="form-control">
+              <?php echo form_error('ulangPass', '<div class="text-small text-danger"> </div>')?>
+            </div>
+
+          </div>
+          <div class="box-footer">
+            <button type="submint" class="btn btn-success">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 
-  <div class="card" style="width: 40%">
-  	<div class="card-body">
-  		<form method="POST" action="<?php echo base_url('ganti_password/ganti_password_aksi')?>">
-  			
-  			<div class="form-grup">
-  				<label>Password Baru</label>
-  				<input type="password" name="passBaru" class="form-control">
-  				<?php echo form_error('paasBaru', '<div class="text-small text-danger"> </div>')?>
-  			</div>
+</section>
 
-  			<div class="form-grup">
-  				<label>Ulangi Password Baru</label>
-  				<input type="password" name="ulangPass" class="form-control">
-  				<?php echo form_error('ulangPass', '<div class="text-small text-danger"> </div>')?>
-  			</div>
-  			<br>
-  			<button type="submint" class="btn btn-success">Simpan</button>
-  		</form>
-  	</div>
-  </div>
-
-</div>
 <!-- /.container-fluid -->

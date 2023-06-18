@@ -12,29 +12,30 @@ class Dashboard extends CI_Controller {
 				<span aria-hidden="true">&times;</span>
 				</button>
 				</div>');
-				redirect('login');
+			redirect('login');
 		}
 	}
 	public function index() 
 	{
 		$pegawai = $this->db->query("SELECT * FROM data_pegawai");
-		$admin = $this->db->query("SELECT * FROM data_pegawai WHERE jabatan = 'Admin'");
-		$jabatan = $this->db->query("SELECT * FROM data_jabatan");
+		$admin = $this->db->query("SELECT * FROM data_pegawai WHERE hak_akses=1");
 		$kehadiran = $this->db->query("SELECT * FROM data_kehadiran");
 		
-		$data['title'] = "Dashboard";
-		$data['pegawai'] = $pegawai->num_rows();
-		$data['admin'] = $admin->num_rows();
-		$data['jabatan'] = $jabatan->num_rows();
-		$data['kehadiran'] = $kehadiran->num_rows();
+		$data =[
+			'title' => "Dashboard",
+			'pegawai' => $pegawai->num_rows(),
+			'admin' => $admin->num_rows(),
+			'kehadiran' => $kehadiran->num_rows(),
+		];
+		// var_dump($data['status']);
+		$this->load->view('layouts/header',$data);
+		$this->load->view('layouts/kepsek/sidebar');
+		$this->load->view('layouts/wraper_up');
 
-		$this->load->view('template_kepsek/header',$data);
-		$this->load->view('template_kepsek/sidebar');
-		$this->load->view('template_kepsek/wrapper_up');
-		$this->load->view('template_kepsek/navbar');
 		$this->load->view('kepsek/dashboard',$data);
-		$this->load->view('template_kepsek/wrapper_down');
-		$this->load->view('template_kepsek/footer');
+
+		$this->load->view('layouts/wraper_down');
+		$this->load->view('layouts/footer');
 	}
 }
 

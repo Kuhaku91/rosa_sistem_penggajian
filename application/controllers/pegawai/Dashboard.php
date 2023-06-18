@@ -12,19 +12,25 @@ class Dashboard extends CI_Controller {
 				<span aria-hidden="true">&times;</span>
 				</button>
 				</div>');
-				redirect('login');
+			redirect('login');
 		}
 	}
 	public function index() 
 	{
-		$data['title'] = "Dashboard";
 		$id=$this->session->userdata('id_pegawai');
-		$data['pegawai'] = $this->db->query("SELECT * FROM data_pegawai WHERE id_pegawai='$id'")->result();
+		$data = [
+			'title' => "Dashboard",
+			'pegawai' => $this->db->query("SELECT * FROM data_pegawai WHERE id_pegawai=".$id)->row(),
+		];
 
-		$this->load->view('template_pegawai/header',$data);
-		$this->load->view('template_pegawai/sidebar');
-		$this->load->view('pegawai/dashboard', $data);
-		$this->load->view('template_pegawai/footer');
+		$this->load->view('layouts/header',$data);
+		$this->load->view('layouts/pegawai/sidebar');
+		$this->load->view('layouts/wraper_up');
+
+		$this->load->view('pegawai/dashboard',$data);
+
+		$this->load->view('layouts/wraper_down');
+		$this->load->view('layouts/footer');
 	}
 }
 

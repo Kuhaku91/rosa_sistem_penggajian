@@ -4,12 +4,23 @@ class Ganti_Password extends CI_Controller {
 
 	public function index() 
 	{
-		$data['title'] = "Form Ganti Password";
+		$data = [
+			'title' => "Form Ganti Password",
 
-		$this->load->view('template_admin/header',$data);
-		$this->load->view('template_admin/sidebar');
-		$this->load->view('ganti_password', $data);
-		$this->load->view('template_admin/footer');
+		];
+
+
+		$this->load->view('layouts/header',$data);
+		// jika yang meakses admin
+		if ($this->session->userdata('hak_akses')==3) {
+			$this->load->view('layouts/kepsek/sidebar');
+		}
+		$this->load->view('layouts/wraper_up');
+
+		$this->load->view('ganti_password',$data);
+
+		$this->load->view('layouts/wraper_down');
+		$this->load->view('layouts/footer');
 	}
 
 	public function ganti_password_aksi()

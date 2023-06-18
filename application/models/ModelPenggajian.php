@@ -1,6 +1,14 @@
 <?php
 
 class ModelPenggajian extends CI_model{
+	public function get_data_pegawai($table)
+	{
+		$this->db->select('*');
+		$this->db->from('data_pegawai');
+		$this->db->where('hak_akses','2');
+		$result = $this->db->get();
+		return $result;
+	}
 
 	public function get_data($table) {
 		return $this->db->get($table);

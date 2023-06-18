@@ -14,7 +14,7 @@ MySQL - 8.0.30 : Database - penggajian
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 CREATE DATABASE /*!32312 IF NOT EXISTS*/`penggajian` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 
-USE `penggajian`;
+USE `penggajian_2`;
 
 /*Table structure for table `data_gaji` */
 

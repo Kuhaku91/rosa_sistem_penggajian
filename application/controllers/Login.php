@@ -25,11 +25,13 @@ class Login extends CI_Controller {
 				</div>');
 				redirect('login');
 			}else{
-				$this->session->set_userdata('hak_akses',$cek->hak_akses);
-				$this->session->set_userdata('nama_pegawai',$cek->nama_pegawai);
-				$this->session->set_userdata('photo',$cek->photo);
 				$this->session->set_userdata('id_pegawai',$cek->id_pegawai);
 				$this->session->set_userdata('nik',$cek->nik);
+				$this->session->set_userdata('nama_pegawai',$cek->nama_pegawai);
+				$this->session->set_userdata('username',$cek->username);
+				$this->session->set_userdata('jenis_kelamin',$cek->jenis_kelamin);
+				$this->session->set_userdata('photo',$cek->photo);
+				$this->session->set_userdata('hak_akses',$cek->hak_akses);
 				switch ($cek->hak_akses) {
 					case 1 : redirect('admin/dashboard');
 						break;

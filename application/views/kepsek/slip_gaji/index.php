@@ -1,45 +1,49 @@
-<div class="container-fluid">
-	<div class="d-sm-flex align-items-center justify-content-between mb-4">
-		<h1 class="h3 mb-0 text-gray-800"><?php echo $title?></h1>
-	</div>
-</div>
+<!-- Content Header (Page header) -->
+<section class="content-header">
+	<h1>
+		<?php echo $title?>
+	</h1>
+</section>
 
-<div class="container-fluid">
-	<div class="card shadow mb-4">
-		<div class="card-body">
-			<div class="table-responsive">
-				<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-					<thead class="thead-dark">
-						<tr>
-							<th class="text-center">No</th>
-							<th class="text-center">NIK</th>
-							<th class="text-center">Nama Guru</th>
-							<th class="text-center">Jenis Kelamin</th>
-							<th class="text-center">Status</th>
-							<th class="text-center">Photo</th>
-							<th class="text-center">Actions</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php $no=1; ?> 
-						<?php foreach($pegawai as $p) : ?>
+<!-- Main content -->
+<section class="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box">
+
+				<div class="box-body">
+					<table id="datatable" class="table table-bordered table-hover text-center">
+						<thead class="thead-dark">
 							<tr>
-								<td class="text-center"><?php echo $no++ ?></td>
-								<td class="text-center"><?php echo $p->nik ?></td>
-								<td class="text-center"><?php echo $p->nama_pegawai ?></td>
-								<td class="text-center"><?php echo $p->jenis_kelamin ?></td>
-								<td class="text-center"><?php echo $p->status ?></td>
-								<td><img src="<?php echo base_url().'photo/'.$p->photo?>" width="50px"></td>
-								<td>
-									<center>
-										<a class="btn btn-sm btn-info" href="<?php echo base_url('kepsek/slip_gaji/cetak_gaji/'.$p->id_pegawai) ?>"><i class="fas fa-eye"></i></a>
-									</center>
-								</td>
+								<th>No</th>
+								<th>NUPTK</th>
+								<th>Nama Guru</th>
+								<th>Jenis Kelamin</th>
+								<th>Photo</th>
+								<th>Actions</th>
 							</tr>
-						<?php endforeach; ?>
-					</tbody>
-				</table>
+						</thead>
+						<tbody>
+							<?php $no=1; ?> 
+							<?php foreach($pegawai as $p) : ?>
+								<tr>
+									<td><?php echo $no++ ?></td>
+									<td><?php echo $p->nik ?></td>
+									<td><?php echo $p->nama_pegawai ?></td>
+									<td><?php echo $p->jenis_kelamin ?></td>
+									<td><img src="<?php echo base_url().'photo/'.$p->photo?>" width="50px"></td>
+									<td>
+										<a class="btn btn-sm btn-info" href="<?php echo base_url('kepsek/slip_gaji/cetak_gaji/'.$p->id_pegawai) ?>">
+											<i class="fa fa-eye"></i>
+										</a>
+									</td>
+								</tr>
+							<?php endforeach; ?>
+						</tbody>
+					</table>
+				</div>
+
 			</div>
 		</div>
 	</div>
-</div>
+</section>
