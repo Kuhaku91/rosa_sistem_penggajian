@@ -16,29 +16,35 @@
       <form class="user" method="POST" action="<?php echo base_url('login') ?>">
         <img src="<?php echo base_url(); ?>assets/img/avatar.svg">
         <h2 class="title">APLIKASI PENGGAJIAN</h2>
+        <!-- <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Password berhasil diganti!</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> -->
         <?php echo $this->session->flashdata('pesan')?>
-              <div class="input-div one">
-                 <div class="i">
-                    <i class="fas fa-user"></i>
-                 </div>
-                 <div class="div">
-                    <h5>Username <?php echo form_error('username', '<div class="text-small text-danger"> </div>')?></h5>
-                    <input type="text" class="input" name="username">
-                 </div>
-              </div>
-              <div class="input-div pass">
-                 <div class="i"> 
-                    <i class="fas fa-lock"></i>
-                 </div>
-                 <div class="div">
-                    <h5>Password <?php echo form_error('password', '<div class="text-small text-danger"> </div>')?></h5>
-                    <input type="password" class="input" name="password">
-                 </div>
-              </div>
-              <input type="submit" class="btn" value="Login">
-            </form>
+        <div class="input-div one">
+          <div class="i">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="div">
+            <h5>Username <?php echo form_error('username', '<div class="text-small text-danger"> </div>')?></h5>
+            <input type="text" class="input" name="username">
+          </div>
         </div>
+        <div class="input-div pass">
+          <div class="i"> 
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="div">
+            <h5>Password <?php echo form_error('password', '<div class="text-small text-danger"> </div>')?></h5>
+            <input type="password" class="input" name="password">
+          </div>
+        </div>
+        <input type="submit" class="btn" value="Login">
+      </form>
     </div>
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/main.js"></script>
+  </div>
+  <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/main.js"></script>
 </body>
 </html>

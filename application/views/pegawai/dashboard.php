@@ -1,54 +1,41 @@
-<!-- Begin Page Content -->
-<div class="container-fluid">
+<!-- Content Header (Page header) -->
+<section class="content-header">
+	<h1>
+		<?php echo $title?>
+	</h1>
+</section>
 
-  <!-- Page Heading -->
-  <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800"><?php echo $title?></h1>
-  </div>
+<section class="content">
+	<div class="row">
+		<div class="col-md-4 col-lg-3 col-xl-3"></div>
+		<div class="col-md-6 col-lg-6 col-xl-6">
+			<!-- Widget: user widget style 1 -->
+			<div class="box box-primary">
+				<div class="box-body box-profile">
+					<img class="profile-user-img img-responsive img-circle" src="<?= base_url('photo/').$this->session->userdata('photo') ?>" alt="User profile picture">
 
-  <div class="alert alert-success font-weight-bold mb-4" style="width: 65%">Selamat datang, Anda login sebagai pegawai</div>
+					<h3 class="profile-username text-center"><?= $this->session->userdata('nama_pegawai') ?></h3>
 
-  <div class="card" style="margin-bottom: 120px; width: 65%">
-  	<div class="card-header font-weight-bold bg-primary text-white">
-  		Data Guru
-  	</div>
+					<p class="text-muted text-center"></p>
 
-  <?php foreach($pegawai as $p) : ?>
-  <div class="card-body">
-  	<div class="row">
-	  	<div>
-	  		<img style="width: 250px" src="<?php echo base_url('photo/'.$p->photo) ?>">
-	  	</div>
-	  	<div>
-	  		<table class="table">
-	  			<tr>
-	  				<td>Nama Pegawai</td>
-	  				<td>:</td>
-	  				<td><?php echo $p->nama_pegawai?></td>
-	  			</tr>
+					<ul class="list-group list-group-unbordered">
+						<li class="list-group-item">
+							<b>Tanggal Masuk</b> <a class="pull-right"><?= $this->session->userdata('tanggal_masuk') ?></a>
+						</li>
+						<li class="list-group-item">
+							<b>Jenis Kelamin</b> <a class="pull-right"><?= $this->session->userdata('jenis_kelamin') ?></a>
+						</li>
+						<li class="list-group-item">
+							<b>Friends</b> <a class="pull-right">13,287</a>
+						</li>
+					</ul>
 
-	  			<tr>
-	  				<td>Jabatan</td>
-	  				<td>:</td>
-	  				<td><?php echo $p->jabatan?></td>
-	  			</tr>
-
-	  			<tr>
-	  				<td>Tanggal Masuk</td>
-	  				<td>:</td>
-	  				<td><?php echo $p->tanggal_masuk?></td>
-	  			</tr>
-
-	  			<tr>
-	  				<td>Status</td>
-	  				<td>:</td>
-	  				<td><?php echo $p->status?></td>
-	  			</tr>
-	  		</table>
-	  	</div>
-  	</div>
-  </div>
-  <?php endforeach; ?>
-
-</div>
-<!-- /.container-fluid -->
+					<a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+				</div>
+				<!-- /.box-body -->
+			</div>
+			<!-- /.widget-user -->
+		</div>
+		<div class="col-md-4 col-lg-3 col-xl-3"></div>
+	</div>
+</section>

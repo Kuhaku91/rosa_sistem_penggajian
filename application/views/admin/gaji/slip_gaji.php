@@ -57,4 +57,5 @@
 			</div>
 		</form>
 	</div>
-	<!-- /.container-fluid -->
+</div>
+<!-- /.container-fluid -->

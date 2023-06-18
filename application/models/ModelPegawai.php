@@ -3,13 +3,14 @@ Class ModelPegawai extends CI_Model
 {
   public function get_data()
   {
-    $data_tunjangan = $this->db->get('data_pegawai');
+    $this->db->select('*');
+    $this->db->from('data_pegawai');
+    $this->db->where('hak_akses !=',3);
+    $data_tunjangan = $this->db->get();
     return $data_tunjangan->result();
   }
-  public function insert_data($data)
-  {
-    $this->db->insert('data_pegawai',$data);
-    return $this->db->insert_id();
+  public function insert_data($data,$table){
+    $this->db->insert($table, $data);
   }
   public function get_data_id($id)
   {
@@ -49,5 +50,13 @@ Class ModelPegawai extends CI_Model
   public function find($id)
   {
     return $this->db->get_where('data_pegawai',array('id_pegawai'=>$id))->row();
+  }
+  public function get_data_by_level($hak_akses)
+  {
+    $this->db->select('*');
+    $this->db->from('data_pegawai');
+    $this->db->where('hak_akses',$hak_akses);
+    $result = $this->db->get();
+    return $result;
   }
 }
