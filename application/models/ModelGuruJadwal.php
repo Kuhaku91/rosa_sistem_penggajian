@@ -1,6 +1,6 @@
 <?php 
 
-Class ModelAdminJadwal extends CI_Model{
+Class ModelGuruJadwal extends CI_Model{
 	public function insert_data($data)
 	{
 		$this->db->insert('data_jadwal',$data);
@@ -27,6 +27,27 @@ Class ModelAdminJadwal extends CI_Model{
 		else{
       // var_dump('a');
 			return 0;
+		}
+	}
+	public function get_mapel($jam,$tanggal,$kelas)
+	{
+		$cek_data = $this->db->get_where('data_jadwal',array('id_kelas'=>$kelas,'tanggal'=>$tanggal,'jam'=>$jam));
+		if ($cek_data->result()) {
+			return $cek_data->row()->id_mapel;
+		}
+		else{
+      // var_dump('a');
+			return 0;
+		}
+	}
+	public function get_nama_mapel($id_mapel)
+	{
+		$cek_data = $this->db->query("select * from data_mapel where id='".$id_mapel."'")->row();
+		if ($cek_data) {
+			return $cek_data->nama_mapel;
+		}
+		else{
+			return '';
 		}
 	}
 	public function get_kelas($id_kelas)

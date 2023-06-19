@@ -1,6 +1,6 @@
 <?php 
 
-Class ModelAdminSlipGaji extends CI_Model{
+Class ModelKepsekSlipGaji extends CI_Model{
 	public function nama_guru($id_guru)
 	{
 		$data = $this->db->get_where('data_pegawai',array('id_pegawai'=>$id_guru))->row();

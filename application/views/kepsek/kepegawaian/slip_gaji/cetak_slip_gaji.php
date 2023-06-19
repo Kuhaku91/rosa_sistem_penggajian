@@ -24,15 +24,15 @@
 </head>
 <body>
 	<?php 
-	$jumlah_kehadiran = $this->ModelAdminKehadiran->data_kehadiran($id_pegawai,$tanggal);
-	$nominal = $this->ModelAdminSlipGaji->gaji_pokok();
+	$jumlah_kehadiran = $this->ModelKepsekKehadiran->data_kehadiran($id_pegawai,$tanggal);
+	$nominal = $this->ModelKepsekSlipGaji->gaji_pokok();
 
-	$alfa = $this->ModelAdminKehadiran->data_alfa($id_pegawai,$tanggal);
-	$izin = $this->ModelAdminKehadiran->data_izin($id_pegawai,$tanggal);
-	$sakit = $this->ModelAdminKehadiran->data_sakit($id_pegawai,$tanggal);
-	$nominal_alfa = $this->ModelAdminSlipGaji->gaji_alfa();
-	$nominal_izin = $this->ModelAdminSlipGaji->gaji_izin();
-	$nominal_sakit = $this->ModelAdminSlipGaji->gaji_sakit();
+	$alfa = $this->ModelKepsekKehadiran->data_alfa($id_pegawai,$tanggal);
+	$izin = $this->ModelKepsekKehadiran->data_izin($id_pegawai,$tanggal);
+	$sakit = $this->ModelKepsekKehadiran->data_sakit($id_pegawai,$tanggal);
+	$nominal_alfa = $this->ModelKepsekSlipGaji->gaji_alfa();
+	$nominal_izin = $this->ModelKepsekSlipGaji->gaji_izin();
+	$nominal_sakit = $this->ModelKepsekSlipGaji->gaji_sakit();
 	?>
 	<center>
 		<h1>SMAN 1 NGANJUK</h1>
@@ -102,7 +102,7 @@
 			<td colspan="2">Tambahan</td>
 			<td class="text-center">Nominal</td>
 		</tr>
-		<?php $jumlah_tambahan=0; $no=1; foreach ($this->ModelAdminGaji->find_tunjangan($id_pegawai)->result() as $key => $value): ?>
+		<?php $jumlah_tambahan=0; $no=1; foreach ($this->ModelKepsekGaji->find_tunjangan($id_pegawai)->result() as $key => $value): ?>
 		<tr>
 			<td class="text-center"><?= $no ?></td>
 			<td colspan="2"><?= $value->nama_gaji ?></td>

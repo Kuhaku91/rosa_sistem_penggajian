@@ -14,13 +14,13 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
 
     <ul class="sidebar-menu" data-widget="tree">
-      <li>
-        <a href="<?= base_url('kepsek/dashboard') ?>">
-          <i class="fa fa-dashboard"></i><span>DASHBOARD</span>
+      <li class="<?= $menu=='dashboard'?'active':'' ?>">
+        <a href="<?= base_url('admin/dashboard') ?>">
+          <i class="fa fa-th"></i> <span>DASHBOARD</span>
         </a>
       </li>
       <li class="header">KEPEGAWAI</li>
-      <li class="treeview">
+      <li class="treeview <?= $menu=='kepegawaian'?'active menu-open':'' ?>">
         <a href="#">
           <i class="fa fa-dashboard"></i> <span>KEPEGAWAIAN</span>
           <span class="pull-right-container">
@@ -28,8 +28,8 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li>
-            <a href="<?= base_url('kepsek/slip_gaji') ?>">
+          <li class="<?= $sub_menu=='slip_gaji'?'active':'' ?>">
+            <a href="<?= base_url('kepsek/kepegawaian/slip_gaji') ?>">
               <i class="fa fa-circle-o"></i>SLIP GAJI
             </a>
           </li>

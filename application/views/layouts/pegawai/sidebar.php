@@ -5,7 +5,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
           <div class="pull-left image">
-            <img src="<?= base_url('photo/').$this->session->userdata('photo') ?>" style="height: 45px !important;width: 45px !important;" class="img-circle" alt="User Image">
+            <img src="<?= base_url('foto/').$this->session->userdata('photo') ?>" style="height: 45px !important;width: 45px !important;" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
             <p><?= $this->session->userdata('nama_pegawai')?></p>
@@ -13,7 +13,29 @@
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
-          <li><a href="<?= base_url('pegawai/jadwal') ?>"><i class="fa fa-book"></i> <span>JADWAL</span></a></li>
+          <li class="<?= $menu=='dashboard'?'active':'' ?>">
+            <a href="<?= base_url('pegawai/dashboard') ?>">
+              <i class="fa fa-th"></i> <span>DASHBOARD</span>
+            </a>
+          </li>
+          <li class="<?= $menu=='jadwal'?'active':'' ?>">
+            <a href="<?= base_url('pegawai/jadwal') ?>">
+              <i class="fa fa-book"></i> 
+              <span>JADWAL</span>
+            </a>
+          </li>
+          <li class="<?= $menu=='absen'?'active':'' ?>">
+            <a href="<?= base_url('pegawai/absen') ?>">
+              <i class="fa fa-book"></i> 
+              <span>ABSEN</span>
+            </a>
+          </li>
+          <li class="<?= $menu=='gaji'?'active':'' ?>">
+            <a href="<?= base_url('pegawai/gaji') ?>">
+              <i class="fa fa-book"></i> 
+              <span>GAJI</span>
+            </a>
+          </li>
           <!-- <li class="active treeview">
             <a href="#">
               <i class="fa fa-dashboard"></i> <span>KEPEGAWAIAN</span>
@@ -182,8 +204,8 @@
           <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
           <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
           <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
-           -->
-        </ul>
-      </section>
-      <!-- /.sidebar -->
-    </aside>
+        -->
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>

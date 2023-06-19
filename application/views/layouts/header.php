@@ -56,13 +56,13 @@
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="<?= base_url('photo/').$this->session->userdata('photo') ?>" class="user-image" alt="User Image">
+                <img src="<?= base_url('foto/').$this->session->userdata('photo') ?>" class="user-image" alt="User Image">
                 <span class="hidden-xs">Selamat Datang <?= $this->session->userdata('nama_pegawai')?></span>
               </a>
               <ul class="dropdown-menu">
                 <!-- User image -->
                 <li class="user-header">
-                  <img src="<?= base_url('photo/').$this->session->userdata('photo') ?>" class="img-circle" alt="User Image">
+                  <img src="<?= base_url('foto/').$this->session->userdata('photo') ?>" class="img-circle" alt="User Image">
 
                   <p>
                     <?= $this->session->userdata('nama_pegawai')?> - <?= $this->session->userdata('nik')?>

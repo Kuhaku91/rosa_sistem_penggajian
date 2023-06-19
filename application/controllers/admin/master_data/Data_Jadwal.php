@@ -32,12 +32,16 @@ class Data_Jadwal extends CI_Controller{
 		// var_dump($convert_tanggal[2]);
 		$data_tanggal = $convert_tanggal[2].'-'.$convert_tanggal[0].'-'.$convert_tanggal[1];
 		//get jadwal
+		$get_kelas = isset($_GET['kelas']) ? $_GET['kelas'] : '';
 
 		$data=[
 			'title'=>'Jadwal',
 			'menu'=>'master_data',
 			'sub_menu'=>'data_jadwal',
 			'tanggal'=>$data_tanggal,
+			'kelas'=>$get_kelas,
+			'data_kelas'=>$this->db->query("select * from data_kelas")->result(),
+			'data_pegawai'=>$this->db->query("select * from data_pegawai where hak_akses=2")->result(),
 		];
 		// var_dump($data);
 		$this->load->view('layouts/header',$data);

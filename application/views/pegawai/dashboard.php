@@ -12,7 +12,7 @@
 			<!-- Widget: user widget style 1 -->
 			<div class="box box-primary">
 				<div class="box-body box-profile">
-					<img class="profile-user-img img-responsive img-circle" src="<?= base_url('photo/').$this->session->userdata('photo') ?>" alt="User profile picture">
+					<img class="profile-user-img img-responsive img-circle" src="<?= base_url('foto/').$this->session->userdata('photo') ?>" alt="User profile picture">
 
 					<h3 class="profile-username text-center"><?= $this->session->userdata('nama_pegawai') ?></h3>
 
@@ -20,13 +20,16 @@
 
 					<ul class="list-group list-group-unbordered">
 						<li class="list-group-item">
-							<b>Tanggal Masuk</b> <a class="pull-right"><?= $this->session->userdata('tanggal_masuk') ?></a>
+							<b>Nama Pegawai</b> <a class="pull-right"><?= $this->session->userdata('nama_pegawai') ?></a>
+						</li>
+						<li class="list-group-item">
+							<b>Nik</b> <a class="pull-right"><?= $this->session->userdata('nik') ?></a>
 						</li>
 						<li class="list-group-item">
 							<b>Jenis Kelamin</b> <a class="pull-right"><?= $this->session->userdata('jenis_kelamin') ?></a>
 						</li>
 						<li class="list-group-item">
-							<b>Friends</b> <a class="pull-right">13,287</a>
+							<b>Username</b> <a class="pull-right"><?= $this->session->userdata('username') ?></a>
 						</li>
 					</ul>
 

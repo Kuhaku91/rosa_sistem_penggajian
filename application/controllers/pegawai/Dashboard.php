@@ -21,6 +21,8 @@ class Dashboard extends CI_Controller {
 		$data = [
 			'title' => "Dashboard",
 			'pegawai' => $this->db->query("SELECT * FROM data_pegawai WHERE id_pegawai=".$id)->row(),
+			'menu' => 'dashboard',
+			'sub_menu' => '',
 		];
 
 		$this->load->view('layouts/header',$data);

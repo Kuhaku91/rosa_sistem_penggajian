@@ -26,6 +26,8 @@ class Dashboard extends CI_Controller {
 			'pegawai' => $pegawai->num_rows(),
 			'admin' => $admin->num_rows(),
 			'kehadiran' => $kehadiran->num_rows(),
+			'menu' => 'dashboard',
+			'sub_menu' => '',
 		];
 		// var_dump($data['status']);
 		$this->load->view('layouts/header',$data);
