@@ -81,7 +81,7 @@ CREATE TABLE `data_jadwal` (
   `tanggal` date DEFAULT NULL,
   `jam` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Data for the table `data_jadwal` */
 
@@ -91,7 +91,8 @@ insert  into `data_jadwal`(`id`,`id_guru`,`id_mapel`,`id_kelas`,`tanggal`,`jam`)
 (3,3,2,3,'2023-06-21',3),
 (4,4,3,3,'2023-06-16',3),
 (5,4,3,4,'2023-06-15',5),
-(6,4,3,3,'2023-06-22',5);
+(6,4,3,3,'2023-06-22',5),
+(7,3,1,4,'2023-06-15',4);
 
 /*Table structure for table `data_kehadiran` */
 
@@ -171,7 +172,7 @@ CREATE TABLE `data_pegawai` (
 insert  into `data_pegawai`(`id_pegawai`,`nik`,`nama_pegawai`,`username`,`password`,`jenis_kelamin`,`photo`,`hak_akses`) values 
 (1,'666','Kepsek','Kepsek','2cc02e17c69c6cb6b89917d26d54dfe7','Perempuan','pegawai-230602-c34f545b98.jpeg',3),
 (2,'123456789','Fauzi','fauzi','0bd9897bf12294ce35fdc0e21065c8a7','Laki-Laki','pegawai-210101-a7ca89f5fc.png',1),
-(3,'1234567890123456','test','test','47bce5c74f589f4867dbd57e9ca9f808','Laki-Laki','pegawai-230616-87a10a2588.jpeg',2),
+(3,'1234567890123456','test','test','098f6bcd4621d373cade4e832627b4f6','Laki-Laki','pegawai-230618-a3e891a0a7.png',2),
 (4,'3571035206010004','aaa','aaaa','594f803b380a41396ed63dca39503542','Laki-Laki','pegawai-230616-968a89d40f.png',2);
 
 /*Table structure for table `data_potongan_gaji` */
@@ -206,7 +207,8 @@ CREATE TABLE `data_slip_gaji` (
 
 insert  into `data_slip_gaji`(`id_pegawai`,`tanggal`,`status`) values 
 (4,'2023-06-01','diterima'),
-(3,'2023-05-01','pengajuan');
+(3,'2023-05-01','diterima'),
+(3,'2023-06-01','diterima');
 
 /*Table structure for table `potongan_gaji` */
 
